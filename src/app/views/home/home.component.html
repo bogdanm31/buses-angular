@@ -1,17 +1,19 @@
-<div className="page-title h2 fb mb-1_5 mb-lg-5" data-testid="page-title">
+<div class="page-title h2 fb mb-1_5 mb-lg-5" data-testid="page-title">
   Buses ariving to
 </div>
 <div
-  className="px-lg-1 h1 biggest-lg fb mb-2_5"
+  class="px-lg-1 h1 biggest-lg fb mb-2_5"
   data-testid="loading-msg"
 >
   Station name
 </div>
 
-<div className="px-lg-1">
-  <ul className="buses-list" data-testid="buses-list">
+<div class="px-lg-1">
+  <ul class="buses-list" data-testid="buses-list">
       <li>
-        
+        <app-bus
+          [bus]="{tripId: '', name: '', arrival: 0, delay: 0, serviceDay: 0}"
+        />
       </li>
   </ul>
 </div>

@@ -1,0 +1,21 @@
+<app-card
+  class="bus-item"
+  [class]="bus().delay ? ' delayed' : ''"
+>
+  <div class="row align-items-center">
+    <div class="col-auto font-0" data-testid="icon">
+      <img src="/img/bus.svg" alt="" />
+    </div>
+    <div class="row col pl-0">
+      <div class="col-12 col-lg pl-0_5" data-testid="bus">
+        53
+      </div>
+      <div
+        class="col-12 col-lg-auto pl-0_5 text-gray-light body2"
+        data-testid="arrival"
+      >
+        In 53m
+      </div>
+    </div>
+  </div>
+</app-card>
