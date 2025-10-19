@@ -1,3 +1,5 @@
+export const midnightTime = new Date(new Date().setHours(0, 0, 0, 0)).getTime() / 1000;
+
 export const timeUnits = [{
   symbol: 's',
   name: {

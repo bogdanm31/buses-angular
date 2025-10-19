@@ -1,17 +1,19 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { BusArrival } from '../../../utils/types/bus';
 import { CardComponent } from '../../components/card/card.component';
-import { toUnits } from '../../../hooks/useTimestamp';
+import { TimestampService } from '../../services/timestamp.service';
 
 @Component({
   selector: 'app-bus',
   standalone: true,
   imports: [CardComponent],
   templateUrl: './bus.component.html',
-  styleUrl: './bus.component.scss'
+  styleUrl: './bus.component.scss',
+  providers: [TimestampService]
 })
 export class BusComponent {
-  nrToUnits = toUnits;
+  timestampService = inject(TimestampService);
+  
   bus = input<BusArrival>({
     arrivalDelay: 0,
     realtimeArrival: 0,

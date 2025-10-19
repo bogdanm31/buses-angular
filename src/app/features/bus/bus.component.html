@@ -14,7 +14,7 @@
         class="col-12 col-lg-auto pl-0_5 text-gray-light body2"
         data-testid="arrival"
       >
-        {{ nrToUnits(+bus().realtimeArrival) }}
+        {{ timestampService.toClockString(+bus().realtimeArrival) }}
       </div>
     </div>
   </div>
