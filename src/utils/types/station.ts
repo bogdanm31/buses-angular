@@ -1,4 +1,7 @@
+import { BusArrival } from "./bus";
+
 export type Station = {
-  id?: string;
-  name?: string;
+  id: string;
+  name: string;
+  stoptimesWithoutPatterns: BusArrival[]
 };

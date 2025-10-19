@@ -1,5 +1,5 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { BusDetails } from '../../../utils/types/bus';
+import { BusArrival } from '../../../utils/types/bus';
 import { BusesService } from '../../services/buses.service';
 import { BusComponent } from '../../features/bus/bus.component';
 
@@ -12,11 +12,22 @@ import { BusComponent } from '../../features/bus/bus.component';
   providers: [BusesService]
 })
 export class HomeComponent implements OnInit {
-  buses = signal<BusDetails[]>([]);
+  buses = signal<BusArrival[]>([]);
   busesService = inject(BusesService)
+  isLoading = signal<boolean>(false);
 
   ngOnInit(): void {
-    console.log('loading buses...')
-    this.busesService.getBuses()
+    this.isLoading.set(true);
+    this.busesService
+      .getBuses()
+      .subscribe(response => {
+        const {
+          id,
+          name,
+          stoptimesWithoutPatterns
+        } = response.data.stop;
+        this.buses.set(stoptimesWithoutPatterns);
+        this.isLoading.set(false);
+      });
   }
 }

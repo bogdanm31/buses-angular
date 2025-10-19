@@ -1,7 +1,9 @@
 export const busesQuery = `
 {
   stop(id: "HSL:1201110") {
-    name stoptimesWithoutPatterns {
+    id
+    name
+    stoptimesWithoutPatterns {
       trip {
         id
         route {

@@ -1,6 +1,7 @@
 import { Component, input } from '@angular/core';
-import { BusDetails } from '../../../utils/types/bus';
+import { BusArrival } from '../../../utils/types/bus';
 import { CardComponent } from '../../components/card/card.component';
+import { toUnits } from '../../../hooks/useTimestamp';
 
 @Component({
   selector: 'app-bus',
@@ -10,11 +11,16 @@ import { CardComponent } from '../../components/card/card.component';
   styleUrl: './bus.component.scss'
 })
 export class BusComponent {
-  bus = input<BusDetails>({
-    tripId: '',
-    name: '',
-    arrival: 0,
-    delay: 0,
-    serviceDay: 0
+  nrToUnits = toUnits;
+  bus = input<BusArrival>({
+    arrivalDelay: 0,
+    realtimeArrival: 0,
+    serviceDay: 0,
+    trip: {
+      id: 0,
+      route: {
+        shortName: ''
+      }
+    }
   })
 }

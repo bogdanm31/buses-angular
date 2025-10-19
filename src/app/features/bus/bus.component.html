@@ -1,6 +1,6 @@
 <app-card
   class="bus-item"
-  [class]="bus().delay ? ' delayed' : ''"
+  [class]="bus().arrivalDelay ? ' delayed' : ''"
 >
   <div class="row align-items-center">
     <div class="col-auto font-0" data-testid="icon">
@@ -8,13 +8,13 @@
     </div>
     <div class="row col pl-0">
       <div class="col-12 col-lg pl-0_5" data-testid="bus">
-        53
+        {{ bus().trip.route.shortName }}
       </div>
       <div
         class="col-12 col-lg-auto pl-0_5 text-gray-light body2"
         data-testid="arrival"
       >
-        In 53m
+        {{ nrToUnits(+bus().realtimeArrival) }}
       </div>
     </div>
   </div>
