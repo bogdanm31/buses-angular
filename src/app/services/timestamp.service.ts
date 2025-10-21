@@ -1,10 +1,22 @@
-import { Injectable } from '@angular/core';
+import { computed, Injectable, OnInit, signal } from '@angular/core';
 import { timeUnits } from '../../utils/constants/timestamp';
+import { interval, map, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TimestampService {
+  constructor() {
+    setInterval(() => {
+      this.currentTime.set(Math.round(Date.now() / 1000))
+    }, 1000);
+  }
+
+  currentTime = signal(Math.round(Date.now() / 1000));
+  midnightTime = signal(new Date(new Date().setHours(0, 0, 0, 0)).getTime() / 1000);
+
+  timePassedFromMidnight = computed(() => Math.floor((this.currentTime() - this.midnightTime()) / 60) * 60);
+
   toUnits = (num: number, excludeUnits: string[] = ["s"]) => {
     let index = 0;
     const data = timeUnits.map((item) => ({

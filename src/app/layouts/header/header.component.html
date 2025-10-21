@@ -4,6 +4,6 @@
     class="clock biggest-lg fb"
     data-testid="clock"
   >
-    12:00
+    {{timestampService.toClockString(timestampService.timePassedFromMidnight())}}
   </div>
 </header>
