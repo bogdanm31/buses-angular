@@ -10,7 +10,7 @@
 
 <div class="px-lg-1">
   <ul class="buses-list" data-testid="buses-list">
-    @for(bus of buses(); track bus.trip.id) {  
+    @for(bus of buses(); track bus.tripId) {  
       <li>
         <app-bus [bus]="bus" />
       </li>

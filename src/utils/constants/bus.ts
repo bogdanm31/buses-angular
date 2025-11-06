@@ -1,0 +1,1 @@
+export const initialStation = 'HSL:1201110';

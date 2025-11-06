@@ -1,7 +1,11 @@
-import { BusArrival } from "./bus";
+import { BusDetails } from "./bus";
 
 export type Station = {
   id: string;
   name: string;
-  stoptimesWithoutPatterns: BusArrival[]
+};
+
+export type StationArrivals = {
+  station: Station;
+  buses: BusDetails[]
 };

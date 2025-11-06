@@ -1,5 +1,5 @@
 import { Component, inject, input } from '@angular/core';
-import { BusArrival } from '../../../utils/types/bus';
+import { BusDetails } from '../../../utils/types/bus';
 import { CardComponent } from '../../components/card/card.component';
 import { TimestampService } from '../../services/timestamp.service';
 
@@ -14,15 +14,11 @@ import { TimestampService } from '../../services/timestamp.service';
 export class BusComponent {
   timestampService = inject(TimestampService);
   
-  bus = input<BusArrival>({
-    arrivalDelay: 0,
-    realtimeArrival: 0,
+  bus = input<BusDetails>({
+    delay: 0,
+    arrival: 0,
     serviceDay: 0,
-    trip: {
-      id: 0,
-      route: {
-        shortName: ''
-      }
-    }
+    tripId: '',
+    name: ''
   })
 }
