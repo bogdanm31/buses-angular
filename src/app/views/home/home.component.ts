@@ -1,8 +1,8 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { BusDetails } from '../../../utils/types/bus';
-import { BusesService } from '../../services/buses.service';
-import { BusComponent } from '../../features/bus/bus.component';
-import { Station } from '../../../utils/types/station';
+import { BusDetails } from '@/utils/types/bus';
+import { BusesService } from '@/services/buses.service';
+import { BusComponent } from '@/features/bus/bus.component';
+import { Station } from '@/utils/types/station';
 
 @Component({
   selector: 'app-home',

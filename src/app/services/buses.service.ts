@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { initialStation } from '../../utils/constants/bus';
-import { StationArrivals } from '../../utils/types/station';
+import { initialStation } from '@/utils/constants/bus';
+import { StationArrivals } from '@/utils/types/station';
 
 @Injectable()
 export class BusesService {

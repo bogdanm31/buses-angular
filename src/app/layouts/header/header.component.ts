@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { TimestampService } from '../../services/timestamp.service';
+import { TimestampService } from '@/services/timestamp.service';
 
 @Component({
   selector: 'app-header',

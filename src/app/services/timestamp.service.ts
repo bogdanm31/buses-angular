@@ -1,6 +1,5 @@
 import { computed, Injectable, OnInit, signal } from '@angular/core';
-import { timeUnits } from '../../utils/constants/timestamp';
-import { interval, map, tap } from 'rxjs';
+import { timeUnits } from '@/utils/constants/timestamp';
 
 @Injectable({
   providedIn: 'root'

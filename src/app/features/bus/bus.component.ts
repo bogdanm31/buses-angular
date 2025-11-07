@@ -1,7 +1,7 @@
 import { Component, inject, input } from '@angular/core';
-import { BusDetails } from '../../../utils/types/bus';
-import { CardComponent } from '../../components/card/card.component';
-import { TimestampService } from '../../services/timestamp.service';
+import { BusDetails } from '@/utils/types/bus';
+import { CardComponent } from '@/components/card/card.component';
+import { TimestampService } from '@/services/timestamp.service';
 
 @Component({
   selector: 'app-bus',
